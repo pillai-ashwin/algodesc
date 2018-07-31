@@ -2,8 +2,9 @@
 directory=$1
 filename=$2
 
-for file in "$directory"/*; do
-    if [ $file = "$directory/$filename" ]; then
-        cat "$file"
-    fi
-done
+if [ ! -f "$directory/$filename" ]; then
+    echo "File not found."
+    python closestmatch.py $directory $filename
+else
+    echo "$(cat "$directory/$filename")"
+fi
