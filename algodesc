@@ -1,0 +1,9 @@
+#!/bin/bash
+directory=$1
+filename=$2
+
+for file in "$directory"/*; do
+    if [ $file = "$directory/$filename" ]; then
+        cat "$file"
+    fi
+done
