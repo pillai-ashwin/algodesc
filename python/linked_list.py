@@ -24,7 +24,7 @@ class LinkedList:
         return(lengthoflinkedlist)
     
     # Method to remove with a choice of first or last or 1st occurence of an element in the list
-    def remove(self,choice = ""):
+    def remove(self,choice = "",value= ""):
         currently_pointing_at = self.head
         if choice == "first":
             self.head = currently_pointing_at.next
@@ -33,6 +33,15 @@ class LinkedList:
                 currently_pointing_at = currently_pointing_at.next
             currently_pointing_at.next = None
         else:
+            while currently_pointing_at.next != None:
+                if currently_pointing_at.value == value:
+                    if currently_pointing_at.next.next == None:
+                        currently_pointing_at.next = None
+                    else:
+                        currently_pointing_at.next = currently_pointing_at.next.next
+                else:
+                    currently_pointing_at = currently_pointing_at.next
+            
 
     # Display the linked list in the form of a list
     def display(self):
