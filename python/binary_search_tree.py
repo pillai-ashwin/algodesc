@@ -9,7 +9,7 @@ class BinarySearchTree:
         self.root = None
     
     def insert(self,value):
-        if self.root = None:
+        if self.root == None:
             self.root = Node(value)
         else:
             self._insert(value,self.root)
@@ -17,13 +17,13 @@ class BinarySearchTree:
     def _insert(self,value,current_node):
         # case when element is lesser than value at the node
         if value < current_node.value:
-            if current_node.leftchild = None:
+            if current_node.leftchild == None:
                 current_node.leftchild = Node(value)
             else:
                 self._insert(value,current_node.leftchild)
         # case when element is greater than value at the node
         elif value > current_node.value:
-            if current_node.rightchild = None:
+            if current_node.rightchild == None:
                 current_node.rightchild = Node(value)
             else:
                 self._insert(value,current_node.rightchild) 
@@ -43,7 +43,7 @@ class BinarySearchTree:
     
     def height(self):
         if self.root != None:
-            return self.height(self,root,0)
+            return self._height(self,root,0)
         else:
             return 0
     
